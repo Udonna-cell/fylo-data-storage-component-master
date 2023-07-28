@@ -1,0 +1,133 @@
+@import "reset";
+@import "colors";
+@import "button";
+
+section.container {
+  > .header {
+    background-color: $Dark-Blue;
+    border-radius: 0.4rem 4rem 0.4rem 0.4rem;
+    padding: 2.3rem;
+    div.logo {
+      height: 2.4rem;
+      width: 100px;
+      margin-bottom: 1.5rem;
+      > img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    div.action-btns {
+      display: flex;
+    }
+  }
+  > .main {
+    background-color: $Dark-Blue;
+    border-radius: 0.4rem;
+    padding: 2.3rem;
+    margin-top: 1rem;
+    color: white;
+    position: relative;
+    > p {
+      font-size: smaller;
+      text-align: start;
+      font-weight: lighter;
+      color: $Grayish-Blue;
+      .bold {
+        font-weight: bold;
+        color: $Pale-Blue;
+      }
+    }
+    div.progress_bar {
+      position: relative;
+      background-color: $Very-Dark-Blue;
+      padding: 0.2rem;
+      border-radius: 50px;
+      margin-top: 0.5rem;
+      margin-bottom: 2rem;
+      div.progress {
+        background: linear-gradient(45deg, $Gradient, $to);
+        width: calc(815 / 1000 * 100%);
+        padding-top: 0.5em;
+        border-radius: 50px;
+        position: relative;
+        &::after {
+          content: "";
+          padding: 0.3rem;
+          background-color: white;
+          position: absolute;
+          border-radius: 50%;
+          top: 50%;
+          left: 100%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      span {
+        position: absolute;
+        font-size: smaller;
+        bottom: -25px;
+      }
+      span.to {
+        // word-wrap: none;
+        // bottom: 0%;
+        right: 0%;
+        // transform: translate(-50%, -50%);
+      }
+    }
+    div.left {
+      position: absolute;
+      background-color: white;
+      padding: 1rem;
+      color: #000000;
+      border-radius: inherit;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 100%;
+      left: 50%;
+    //   transform: translate(-50%, -50%);
+      span.light {
+        font-weight: 600;
+        text-transform: capitalize;
+        font-size: 0.7rem;
+      }
+      span.bigbold {
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+      span.superscript {
+        position: relative;
+        bottom: 1.5px;
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  section.container {
+    display: flex;
+    gap: 1rem;
+    // background-color: red;
+    width: 70%;
+    > .header {
+      flex-grow: 1;
+    }
+    > .main {
+      flex-grow: 2.5;
+      div.left {
+        top: -25%;
+        left: 65%;
+        &::after {
+            content: "";
+            padding: 0.2rem;
+            width: 1rem;
+            height: 1rem;
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            top: 90%;
+            left: 75%;
+            position: absolute;
+            background-color: inherit;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+button.btn {
+  outline: none;
+  border: none;
+}
+button.btn.file_upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $Very-Dark-Blue;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  height: calc(0.8rem * 2.6);
+  width: calc(0.8rem * 2.6);
+  > img {
+    width: 15px;
+  }
+  &:not(:nth-child(even)) {
+    margin: auto 1rem;
+  }
+}
